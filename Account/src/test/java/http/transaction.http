@@ -1,0 +1,33 @@
+### use balance (잔액 사용)
+POST http://localhost:8080/transaction/use
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "accountNumber": "1000000000",
+  "amount": 100
+}
+
+### use balance2 (lock 확인을 위한 잔액 사용2)
+POST http://localhost:8080/transaction/use
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "accountNumber": "1000000000",
+  "amount": 100
+}
+
+
+### cancel balance (잔액 사용 취소)
+POST http://localhost:8080/transaction/cancel
+Content-Type: application/json
+
+{
+  "transactionId": "b643702a8dd7471d9f6393adc20280f0",
+  "accountNumber": "1000000000",
+  "amount": 100
+}
+
+### query transaction (거래 확인)
+GET http://localhost:8080/transaction/2d728ed14c0e470f9f14ad6f4cc13f22

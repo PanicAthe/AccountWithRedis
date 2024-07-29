@@ -1,0 +1,21 @@
+### create account (계좌 생성)
+POST http://localhost:8080/account
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "initialBalance": 0
+}
+
+### delete account (계좌 해지)
+DELETE http://localhost:8080/account
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "accountNumber": "1000000003"
+}
+
+### GET accounts (계좌 확인)
+GET http://localhost:8080/account?user_id=1
+Accept: application/json
