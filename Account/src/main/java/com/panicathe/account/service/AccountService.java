@@ -3,8 +3,6 @@ package com.panicathe.account.service;
 import com.panicathe.account.domain.Account;
 import com.panicathe.account.domain.AccountUser;
 import com.panicathe.account.dto.AccountDto;
-import com.panicathe.account.dto.AccountInfo;
-import com.panicathe.account.dto.CreateAccount;
 import com.panicathe.account.exception.AccountException;
 import com.panicathe.account.repository.AccountRepository;
 import com.panicathe.account.repository.AccountUserRepository;
@@ -17,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,7 +33,7 @@ public class AccountService {
 
         //계좌 생성
         String newAccountNumber = accountRepository.findFirstByOrderByIdDesc()
-                .map(account -> (Integer.parseInt(account.getAccountNumber()))+1+"")
+                .map(account -> String.valueOf(Integer.parseInt(account.getAccountNumber()) + 1))
                 .orElse("1000000000"); //최초 생성
 
         //계좌 저장, 그 정보를 넘김
@@ -54,9 +51,8 @@ public class AccountService {
     }
 
     private AccountUser getAccountUser(Long userId) {
-        AccountUser accountUser = accountUserRepository.findById(userId)
+        return accountUserRepository.findById(userId)
                 .orElseThrow(()-> new AccountException(ErrorCode.USER_NOT_FOUND));
-        return accountUser;
     }
 
     private void validateCreateAccount(AccountUser accountUser) {

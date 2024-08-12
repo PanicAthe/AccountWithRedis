@@ -8,7 +8,6 @@ import com.panicathe.account.repository.AccountRepository;
 import com.panicathe.account.repository.AccountUserRepository;
 import com.panicathe.account.type.AccountStatus;
 import com.panicathe.account.type.ErrorCode;
-import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

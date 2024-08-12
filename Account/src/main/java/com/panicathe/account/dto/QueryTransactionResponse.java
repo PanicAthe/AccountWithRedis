@@ -2,7 +2,6 @@ package com.panicathe.account.dto;
 
 import com.panicathe.account.type.TransactionResultType;
 import com.panicathe.account.type.TransactionType;
-import jakarta.validation.constraints.*;
 import lombok.*;
 
 import java.time.LocalDateTime;

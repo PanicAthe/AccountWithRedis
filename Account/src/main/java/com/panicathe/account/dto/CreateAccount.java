@@ -1,7 +1,6 @@
 package com.panicathe.account.dto;
 
 
-import com.panicathe.account.aop.AccountLockIdInterface;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;

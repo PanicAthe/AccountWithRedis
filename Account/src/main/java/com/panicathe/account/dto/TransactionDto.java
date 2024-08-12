@@ -1,6 +1,5 @@
 package com.panicathe.account.dto;
 
-import com.panicathe.account.domain.Account;
 import com.panicathe.account.domain.Transaction;
 import com.panicathe.account.type.TransactionResultType;
 import com.panicathe.account.type.TransactionType;
