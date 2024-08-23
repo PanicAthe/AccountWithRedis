@@ -19,7 +19,6 @@ public class AccountDto {
     private LocalDateTime unRegisteredAt;
 
     public static AccountDto fromEntity(Account account) {
-        //생성자와 차이점?
         return AccountDto.builder()
                 .userId(account.getAccountUser().getId())
                 .accountNumber(account.getAccountNumber())
